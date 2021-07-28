@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: microservice-test-consumer
+
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: group_id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      topic-name: user-update
+
+  data:
+    mongodb:
+      port: 27017
+      host: localhost
+      database: octopus
+
+
+
+
+server:
+  servlet:
+    context-path: /consumer/v1
+  http2:
+    enabled: true
+  port: 9000
+

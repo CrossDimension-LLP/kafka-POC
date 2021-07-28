@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: microservice-test-producer
+
+  data:
+    mongodb:
+      port: 27017
+      host: localhost
+      database: octopus
+
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      topic-name: user-update
+
+
+
+server:
+  servlet:
+    context-path: /producer/v1
+  http2:
+    enabled: true
+  port: 8085
