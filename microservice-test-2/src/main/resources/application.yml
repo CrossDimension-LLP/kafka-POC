@@ -7,9 +7,13 @@ spring:
       bootstrap-servers: localhost:9092
       group-id: group_id
       auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      topic-name: user-update
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: com.octopus.microservicetest1.model.*
+      topic-name: userUpdation
+
 
   data:
     mongodb:
