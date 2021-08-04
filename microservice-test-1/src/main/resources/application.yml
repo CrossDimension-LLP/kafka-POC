@@ -4,9 +4,8 @@ spring:
 
   data:
     mongodb:
+      host: octopus-mongodb-service
       port: 27017
-      host: localhost
-      database: octopus
 
   kafka:
     producer:
